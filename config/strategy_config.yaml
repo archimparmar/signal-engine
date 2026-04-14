@@ -1,0 +1,29 @@
+# Config-driven strategy parameters
+strategy:
+  name: sma_crossover
+  params:
+    short_period: 10
+    long_period: 30
+
+data:
+  source: mock            # mock | yfinance
+  symbol: AAPL
+  start_date: "2024-01-01"
+  end_date: "2024-12-31"
+  interval: "1d"
+  mock:
+    base_price: 150.0
+    volatility: 0.02
+    seed: 42
+
+execution:
+  quantity: 100
+  slippage_pct: 0.001
+  commission_pct: 0.001
+
+portfolio:
+  initial_cash: 100000
+
+simulation:
+  stream_delay_seconds: 1
+  max_bars: 500
