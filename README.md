@@ -4,18 +4,6 @@ A modular, extensible data-processing and signal-generation backend built in Pyt
 Architecture
 The system follows a strict layered architecture where data flows directionally through distinct components with clear separation of concerns.
 
-┌──────────────┐ ┌───────────────┐ ┌──────────────────┐ ┌───────────┐
-│ DataHandler │────▶│ SignalEngine │────▶│ ExecutionEngine │────▶│ Portfolio │
-│ (ingestion) │ │ (strategies) │ │ (simulated fill) │ │ (tracker) │
-└──────────────┘ └───────────────┘ └──────────────────┘ └───────────┘
-▲ ▲ ▲ ▲
-│ │ │ │
-DataSource ABC Strategy ABC SlippageModel ABC PortfolioManager
-(Mock / YFinance) (SMA / custom) CommissionModel ABC (multi-user)
-
-text
-
-
 ## Project Structure
 
 signal_engine/
