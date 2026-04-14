@@ -4,32 +4,6 @@ A modular, extensible data-processing and signal-generation backend built in Pyt
 Architecture
 The system follows a strict layered architecture where data flows directionally through distinct components with clear separation of concerns.
 
-## Project Structure
-
-signal_engine/
-├── core/ # Domain layer — models + engines
-│ ├── models.py # Pure dataclasses (OHLC, Signal, Order, Position, Trade)
-│ ├── data_handler.py # Ingestion: DataSource ABC, Mock, YFinance, DataHandler
-│ ├── signal_engine.py # Strategy registry + signal generation
-│ ├── execution_engine.py # Order fill simulation (slippage + commission)
-│ └── portfolio.py # Position tracking, PnL, trade history
-├── strategies/ # Plug-in strategies & indicators
-│ ├── base.py # Indicator & Strategy ABCs
-│ └── sma_crossover.py # SMA crossover (with SMA & EMA indicators)
-├── config/
-│ └── strategy_config.yaml # Config-driven parameters
-├── api/
-│ └── main.py # FastAPI REST layer (multi-user)
-├── utils/
-│ └── logger.py # Structured logging setup
-├── engine.py # Orchestrator: backtest + streaming + PortfolioManager
-├── main.py # CLI entry point
-├── requirements.txt
-└── README.md
-
-text
-
-
 ---
 
 ## Requirements Satisfaction
